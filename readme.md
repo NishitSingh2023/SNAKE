@@ -1,1 +1,1 @@
-this is a snake game
+This is a snake game in python that uses Turtle library to work and visualize
