@@ -14,10 +14,8 @@ fcoord = [0,0,0]
 #position
 pos = []
 
-
-def home(x,y):
-    x = 0
-    y = 0
+#homimg function
+def home(x=0,y=0):
     a[0] = 0
     b[0] = 0
     h[0] = 0
@@ -28,15 +26,18 @@ def home(x,y):
     turtle.pu()
     turtle.color("black")
     turtle.goto(0,0)
-    turtle.write("Play")
-    turtle.title("Snake")
-    #turtle.onscreenclick(start)
+    turtle.write("Press Enter to Play",align="center",font=(50))
+    turtle.title("SNAKE")
     
+
     turtle.onkey(start, 'Return')
     
+    turtle.listen()
+    
     turtle.mainloop()
-
-def level_1():
+    
+#Define to Playable Area
+def boundary_area():
     turtle.clear()
     turtle.pu()
     turtle.speed(0)
@@ -51,10 +52,11 @@ def level_1():
     turtle.pu()
     turtle.goto(0,0)
 
-def start(x,y):
-    turtle.onkey(None)
 
-    level_1()
+#Controller Function
+def start(x=0,y=0):   
+
+    boundary_area()
 
     tfood = turtle.Turtle()
     tfood.hideturtle()
@@ -99,7 +101,6 @@ def start(x,y):
     tfood.clear()
     gameover()
 
-
 #Food
 def food(tfood):
     x = random.randrange(-8,8,1)
@@ -113,31 +114,35 @@ def food(tfood):
     tfood.goto(x*20,y*20)
     tfood.stamp()
 
-#Up   
+
+
+#Change Directions
 def u():
     if h[0] == 270:
         pass
     else:
         h[0] = 90
-#Down
+
 def d():
     if h[0] == 90:
         pass
     else:
         h[0] = 270
-#Left
+
 def l():
     if h[0] == 0:
         pass
     else:
         h[0] = 180
-#Right
+
 def r():
     if h[0] == 180:
         pass
     else:
         h[0] = 0
 
+
+#movement of snake
 def move():
     turtle.pensize(1)
     turtle.color("black")
@@ -156,24 +161,28 @@ def move():
     else:
         pos.insert(0,[round(x),round(y)])       
         b[0] += 1    
-    
+
+
+
+#Game ending
 def gameover():
-    turtle.onscreenclick(None)
+        
     turtle.speed(7)
     turtle.pu()
     turtle.goto(0,150)
     turtle.color("red")
-    turtle.write("Game Over",align="center", font=(40))
+    turtle.write("GAME OVER",align="center", font=(100))
     turtle.goto(0,50)
-    turtle.write("Score:" + str(a[0]),align="center",font=(30))
-    turtle.goto(200,-200)
-    turtle.write("(Click anywhere to return to the main menu)",align="right",font=(0.0000001))
-    #turtle.onscreenclick(home)
+    turtle.write("Score:" + str(a[0]),align="center",font=(70))
+    turtle.goto(0,-150)
+    turtle.write("(Press 'ENTER' to Play Again)",align="center",font=(30))
+    
     turtle.onkey(home, 'Return')
-
+    
+    turtle.listen()
+    
     turtle.mainloop()
 
-    
-#================================================================
 #Main Function
-home(0,0)
+# Game Start
+home()
