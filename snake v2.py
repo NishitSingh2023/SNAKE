@@ -30,7 +30,10 @@ def home(x,y):
     turtle.goto(0,0)
     turtle.write("Play")
     turtle.title("Snake")
-    turtle.onscreenclick(start)
+    #turtle.onscreenclick(start)
+    
+    turtle.onkey(start, 'Return')
+    
     turtle.mainloop()
 
 def level_1():
@@ -39,17 +42,17 @@ def level_1():
     turtle.speed(0)
     turtle.pensize(20)
     turtle.color("grey")
-    turtle.goto(-220,220)
+    turtle.goto(-300,300)
     turtle.pd()
-    turtle.goto(220,220)
-    turtle.goto(220,-220)
-    turtle.goto(-220,-220)
-    turtle.goto(-220,220)
+    turtle.goto(300,300)
+    turtle.goto(300,-300)
+    turtle.goto(-300,-300)
+    turtle.goto(-300,300)
     turtle.pu()
     turtle.goto(0,0)
 
 def start(x,y):
-    turtle.onscreenclick(None)
+    turtle.onkey(None)
 
     level_1()
 
@@ -64,10 +67,10 @@ def start(x,y):
     tscore.hideturtle()
     tscore.pu()
     tscore.speed(0)
-    tscore.goto(100,-250)
+    tscore.goto(250,-290)
     tscore.write("Score:" + str(a[0]), align="center",font=(10))
     
-    while x > -210 and x < 210 and y > -210 and y <210:
+    while x > -290 and x < 290 and y > -290 and y <290:
         if fcoord[2] == 0:
             food(tfood)
             fcoord[2] = 1
@@ -156,21 +159,21 @@ def move():
     
 def gameover():
     turtle.onscreenclick(None)
-    turtle.speed(0)
+    turtle.speed(7)
     turtle.pu()
     turtle.goto(0,150)
     turtle.color("red")
-    turtle.write("Game Over",align="center", font=(10))
+    turtle.write("Game Over",align="center", font=(40))
     turtle.goto(0,50)
-    turtle.write("Score:" + str(a[0]),align="center",font=(10))
+    turtle.write("Score:" + str(a[0]),align="center",font=(30))
     turtle.goto(200,-200)
     turtle.write("(Click anywhere to return to the main menu)",align="right",font=(0.0000001))
-    turtle.onscreenclick(home)
+    #turtle.onscreenclick(home)
+    turtle.onkey(home, 'Return')
+
     turtle.mainloop()
+
     
-        
-# # # # # # # # # # # # # # # # # # # # # #
-# Main                                    #
-# # # # # # # # # # # # # # # # # # # # # #
-if __name__ == '__main__':
-    home(0,0)
+#================================================================
+#Main Function
+home(0,0)
