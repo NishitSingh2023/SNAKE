@@ -1,4 +1,6 @@
-import turtle
+#================================================================
+#Importing Libraries
+import turtle 
 import random
 
 #head orientation
@@ -14,7 +16,9 @@ fcoord = [0,0,0]
 #position
 pos = []
 
+#===================================================================
 #homimg function
+
 def home(x=0,y=0):
     a[0] = 0
     b[0] = 0
@@ -35,8 +39,10 @@ def home(x=0,y=0):
     turtle.listen()
     
     turtle.mainloop()
-    
+
+ #===================================================================   
 #Define to Playable Area
+    
 def boundary_area():
     turtle.clear()
     turtle.pu()
@@ -52,8 +58,9 @@ def boundary_area():
     turtle.pu()
     turtle.goto(0,0)
 
-
+#===================================================================
 #Controller Function
+    
 def start(x=0,y=0):   
 
     boundary_area()
@@ -101,7 +108,9 @@ def start(x=0,y=0):
     tfood.clear()
     gameover()
 
+#===================================================================
 #Food
+    
 def food(tfood):
     x = random.randrange(-8,8,1)
     y = random.randrange(-8,8,1)
@@ -115,8 +124,9 @@ def food(tfood):
     tfood.stamp()
 
 
-
+#===================================================================
 #Change Directions
+    
 def u():
     if h[0] == 270:
         pass
@@ -142,7 +152,9 @@ def r():
         h[0] = 0
 
 
+#===================================================================
 #movement of snake
+        
 def move():
     turtle.pensize(1)
     turtle.color("black")
@@ -164,7 +176,9 @@ def move():
 
 
 
+#===================================================================
 #Game ending
+        
 def gameover():
         
     turtle.speed(7)
@@ -183,6 +197,8 @@ def gameover():
     
     turtle.mainloop()
 
+#===================================================================
 #Main Function
 # Game Start
+
 home()
