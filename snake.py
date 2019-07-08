@@ -102,6 +102,7 @@ class Game:
         self.screen.onkey(self.snakeleft, "Left")
         self.screen.onkey(self.snakeright, "Right")
 
+
     def nextFrame(self):
         self.artist.clear()
 
