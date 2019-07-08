@@ -56,7 +56,7 @@ def boundary_area():
     turtle.goto(-300,-300)
     turtle.goto(-300,300)
     turtle.pu()
-    turtle.goto(0,0)
+    turtle.goto(+100,0)
 
 #===================================================================
 #Controller Function
