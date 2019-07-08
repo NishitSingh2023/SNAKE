@@ -40,7 +40,7 @@ def home(x=0,y=0):
     
     turtle.mainloop()
 
- #===================================================================   
+ #====================================================================
 #Define to Playable Area
     
 def boundary_area():
@@ -159,7 +159,7 @@ def move():
     turtle.pensize(1)
     turtle.color("black")
     turtle.pu()
-    turtle.speed(3)
+    turtle.speed(5)
     turtle.setheading(h[0])
     turtle.shape("square")
     turtle.stamp()
@@ -176,12 +176,12 @@ def move():
 
 
 
-#===================================================================
+#====================================================================
 #Game ending
         
 def gameover():
         
-    turtle.speed(7)
+    turtle.speed(0)
     turtle.pu()
     turtle.goto(0,150)
     turtle.color("red")
